@@ -1,0 +1,17 @@
+name: Run Interactive Linux VM on GitHub
+
+on: [push, workflow_dispatch]
+
+jobs:
+  run-vm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Vérifier le système
+        run: uname -a
+      - name: Installer tmate (Accès SSH)
+        run: sudo apt update && sudo apt install -y tmate
+      - name: Ouvrir une session SSH avec tmate
+        run: |
+          echo "Attends quelques secondes... puis copie le lien ci-dessous pour ouvrir le terminal SSH :"
+          tmate -F
+          while true; do sleep 60; done
