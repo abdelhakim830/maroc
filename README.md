@@ -1,0 +1,2 @@
+# maroc
+linux vm
